@@ -1,0 +1,579 @@
+/* Importações */
+
+@font-face {
+	font-family: Sans;
+	src: url(/fonts/IBMPlexSans-Regular.ttf);
+}
+
+/* Regras */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* Variaveis */
+
+:root {
+	--cor1: #000000;
+	--cor2: #ffffff;
+	--cor3: #1e1e1e;
+	--cor4: #636262;
+
+	--textPrincipal: Sans, Sans-serif;
+	--textoSegundario: "Segoe UI", sans-serif;
+}
+
+/* Partes */
+
+/* corpo */
+
+body {
+	font-size: 16px;
+}
+
+/* Cabeçalho */
+
+header {
+	height: calc(100vh - 15vh);
+	background: black url("/design/imgs/coffee.png") no-repeat center center;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+header > img {
+	max-width: 400px;
+	height: 400px;
+	margin: auto;
+}
+
+header > div {
+	display: flex;
+	justify-content: end;
+	margin-right: 25px;
+}
+
+#seta {
+	position: relative;
+	top: -100% !important;
+	height: 20px;
+	animation-name: movimento;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+/* Cabeçalho navegação */
+
+nav {
+	background-color: var(--cor3);
+	height: 15vh;
+	width: 100%;
+	position: sticky;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 8;
+}
+
+nav > img {
+	max-height: 85px;
+	height: 100%;
+}
+
+nav > button {
+	background-color: var(--cor3);
+	border: none;
+}
+
+/* Navegação > Menu Js */
+
+.fi-rr-menu-burger {
+	color: var(--cor4);
+	padding: 10px;
+	margin-right: 15px;
+	font-size: 30px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.fi-rr-menu-burger:hover {
+	color: var(--cor2);
+}
+
+.nav {
+	width: 0;
+	height: 100%;
+	background: black url("/design/imgs/onlyeggs.png") no-repeat center center;
+	background-size: cover;
+	z-index: 9;
+	position: fixed;
+	right: 0;
+	top: 0;
+	overflow-x: hidden;
+	transition: all 0.5s;
+}
+
+#conteudo {
+	position: relative;
+	top: 15%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.nav a {
+	padding: 10px;
+	text-decoration: none;
+	color: var(--cor4);
+	display: block;
+	font: normal 2em var(--textPrincipal);
+	transition: 0.3s;
+}
+
+.nav a:hover {
+	color: var(--cor2);
+}
+
+.fechar {
+	position: absolute;
+	left: 93.9%;
+	top: 23px;
+	font-size: 30px !important;
+}
+
+.redesSociais > a {
+	display: inline-block;
+}
+
+/* Principal */
+
+main {
+	background-color: var(--cor1);
+}
+
+/* Baner */
+
+#baner1 {
+	height: 80vh;
+	background: black url("/design/imgs/chris4.jpg") no-repeat center center;
+	background-size: cover;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+#baner1 > h1 {
+	color: var(--cor2);
+	font: normal 2em var(--textPrincipal);
+	width: 300px;
+	text-align: center;
+	margin-right: 20px !important;
+}
+
+/* Texto */
+
+#texto {
+	border: 60px solid white;
+	border-image-source: url(/design/imgs/borda1.png);
+	border-image-slice: 30;
+	border-image-repeat: repeat;
+	max-width: 850px;
+	margin: auto;
+	padding: 20px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+#texto > p {
+	color: var(--cor2);
+	font: normal 1.2em var(--textoSegundario);
+	line-height: 35px;
+	text-align: left;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+/* Avaliações */
+
+#avaliações {
+	margin: auto;
+	max-width: 720px;
+	display: flex;
+	margin-top: 30px;
+	justify-content: space-between;
+}
+
+#avaliações img {
+	height: 80px;
+}
+
+#nota {
+	display: flex;
+	flex-direction: column;
+}
+
+#nota > img {
+	width: 160px;
+	position: relative;
+	top: -30px;
+}
+
+#nota p {
+	color: var(--cor2);
+	text-align: center;
+	font: normal 1em var(--textPrincipal);
+	position: relative;
+	top: -50px;
+}
+
+/* Redes sociais */
+
+.redesSociais img {
+	height: 30px !important;
+	margin-left: 10px;
+	position: relative;
+	top: -40px;
+	transition: all 0.2s;
+}
+
+.redesSociais img:hover {
+	transform: translateY(-5px);
+}
+
+#face {
+	margin-left: 0 !important;
+}
+
+#mail {
+	height: 35px !important;
+	position: relative;
+	top: -35px !important;
+}
+
+/* A parte */
+
+aside {
+	background-color: var(--cor2);
+}
+
+/* baner2 */
+
+.slaider {
+	display: none;
+}
+
+.swiper {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+#slideLink {
+	position: absolute;
+	transform: translatex(-50%);
+	left: 50%;
+	top: 80%;
+	width: 200px;
+	color: var(--cor2);
+	z-index: 7;
+	background-color: var(--cor1);
+	padding: 5px 10px 10px 10px;
+	text-align: center;
+	font: normal 1.4em var(--textPrincipal);
+	font-variant: small-caps;
+	text-decoration: none;
+	transition: background-color 0.5s;
+}
+
+#slideLink:hover {
+	background-color: var(--cor2);
+	color: var(--cor1);
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+aside h1 {
+	margin-top: 40px;
+	margin-bottom: 30px;
+	font: normal 2.7em var(--textPrincipal);
+	text-align: center;
+}
+
+#cardapio {
+	display: block;
+}
+
+#cardapioMb {
+	display: none;
+}
+
+#cardapio img {
+	display: block;
+	margin: auto;
+	margin-bottom: 20px;
+	max-width: 500px;
+	max-height: 700px;
+}
+
+#download {
+	margin: auto;
+	width: 200px;
+}
+
+#download img {
+	margin: auto;
+	margin-top: 30px;
+	display: block;
+	height: 70px;
+	transition: transform 0.5s;
+}
+
+#download img:hover {
+	transform: translateY(-10px);
+}
+
+#download p {
+	text-align: center;
+	font: bold 1em var(--textPrincipal);
+	margin-top: 10px;
+	margin-bottom: 40px;
+}
+
+/* Horarios */
+
+#horarios {
+	height: 100%;
+	background: var(--cor1) url("/design/imgs/hero.jpg") no-repeat center center;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+}
+
+#horarios > h1 {
+	color: var(--cor2);
+	margin-top: 30px;
+}
+
+#horarios p {
+	color: var(--cor2);
+	text-align: center;
+	font: bold 1.4em var(--textoSegundario);
+	padding: 5px;
+	margin-bottom: 20px;
+}
+
+#horarios p:last-child {
+	margin-top: 15px !important;
+	font: normal 1.2em var(--textoSegundario);
+}
+
+/* Depoimentos */
+
+.depoimento {
+	background-color: var(--cor1);
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.depoimento > h1 {
+	color: var(--cor2);
+}
+
+#conteudodp {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.cartão {
+	border: 40px solid var(--cor2);
+	border-image-source: url(/design/imgs/borda2.png);
+	border-image-slice: 30;
+	border-image-repeat: repeat;
+}
+
+.cartão > p {
+	color: var(--cor2);
+	font: normal 1em var(--textoSegundario);
+	text-align: center;
+	margin-bottom: 10px;
+	padding: 3px;
+	max-width: 320px;
+}
+
+.cartão h2 {
+	color: var(--cor2);
+	font: normal 1.5em var(--textPrincipal);
+	text-align: center;
+	margin-top: 10px;
+}
+
+.cartão .quote {
+	height: 30px;
+	position: relative;
+	left: 85%;
+}
+
+.cartão .foto {
+	height: 60px;
+	border-radius: 50%;
+	border: 2px solid var(--cor2);
+	display: block;
+	margin: auto;
+}
+
+.depoimentos {
+	display: block;
+}
+
+/* Google maps */
+
+iframe {
+	height: 300px;
+	width: 100%;
+}
+
+/* Rodapé */
+
+footer {
+	height: 30vh;
+	background-color: var(--cor3);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+footer > img {
+	height: 120px;
+	position: relative;
+	left: -1.8%;
+}
+
+#redesfooter {
+	margin-right: 25px;
+	display: flex;
+	align-items: center;
+}
+
+#redesfooter img {
+	height: 24px;
+	margin-left: 10px;
+	transition: all 0.2s;
+}
+
+#redesfooter img:hover {
+	transform: translateY(-5px);
+}
+
+#email {
+	height: 36px !important;
+	position: relative;
+	top: 3px;
+}
+
+/* Animações */
+
+/* seta do header */
+
+@keyframes movimento {
+	0% {
+		transform: translateY(-15px);
+	}
+
+	50% {
+		transform: translateY(-10px);
+	}
+
+	100% {
+		transform: translateY(-15px);
+	}
+}
+
+/* Media query corpo */
+
+@media only screen and (max-width: 600px) {
+	body {
+		font-size: 14px;
+	}
+
+	#baner1 h1{
+		font-size: 20px !important;
+		width: 200px;
+		margin-right: 10px !important;
+	}
+
+	#texto p{
+		line-height: 25px;
+	}
+
+	#download img {
+		height: 40px;
+	}
+
+	#download p{
+		margin-bottom: 20px;
+	}
+}
+
+/* Media query Cardapio */
+
+@media only screen and (max-width: 600px) {
+	#cardapio {
+		display: none;
+	}
+
+	#cardapioMb {
+		display: block;
+	}
+
+	#cardapioMb img {
+		max-width: 400px;
+		margin: auto;
+	}
+}
+
+/* Media query avaliações */
+
+@media only screen and (max-width: 615px) {
+	#avaliações {
+		display: block;
+		margin-top: 5px !important;
+	}
+
+	#avaliações > img {
+		display: block;
+		margin: auto;
+	}
+
+	#nota > img {
+		margin-top: 5px !important;
+		margin: auto;
+		display: block;
+	}
+
+	#nota > p {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	#r3 {
+		display: block;
+		margin: auto;
+	}
+}
